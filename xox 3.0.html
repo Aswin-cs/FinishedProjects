@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+*{
+    margin: 0px;
+ }
+ .main{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    height: 50vh;
+ }
+ #d11{
+    height: 260px;
+    width: fit-content;
+ }
+    .div{
+      font-family: Arial, Helvetica, sans-serif;
+      cursor:pointer;
+        width: 70px;
+        height: 60px;
+        font-size: 30px;
+        border: 5px solid black;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        animation-duration: 2s;
+    }
+    @keyframes anime {
+        from{background-color: red;}
+        to{background-color: white;}        
+    }
+    #d1{
+        display: inline-block;
+        border-left: none;
+        border-top: none;
+    }
+    #d2{
+        display: inline-block;
+        border-top: none;
+    }
+    #d3{
+        display: inline-block;
+        border-right: none;
+        border-top: none;
+    }
+    #d4{
+        display: inline-block;
+        border-left: none;
+    }
+    #d5{
+        display: inline-block;
+    }
+    #d6{
+        display: inline-block;
+        border-right: none;
+    }
+    #d7{
+        display: inline-block;
+        border-left: none;
+        border-bottom: none;
+    }
+    #d8{
+        display: inline-block;
+        border-bottom: none;
+    }
+    #d9{
+        display: inline-block;
+        border-right: none;
+        border-bottom: none;
+    }
+    #d12{
+        font-size: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    .cov{
+    display: none;
+    width: 98vw;
+    height: 97vh;
+    position: fixed;
+    z-index: 3;
+    background-color: transparent;
+    }
+</style>
+</head>
+<body>
+  <div class="cov" id="cov"> </div> 
+   <div class="main">
+    <div id="d11">
+    <div id="d1" class="div" onclick="func('d1')">_</div>
+    <div id="d2" class="div"onclick="func('d2')">_</div>
+    <div id="d3"  class="div"onclick="func('d3')">_</div>
+    <br>
+    <div id="d4" class="div" onclick="func('d4')">_</div>
+    <div id="d5" class="div"onclick="func('d5')">_</div>
+    <div id="d6" class="div"onclick="func('d6')">_</div>
+    <br>
+    <div id="d7" class="div"onclick="func('d7')">_</div>
+    <div id="d8" class="div"onclick="func('d8')">_</div>
+    <div id="d9" class="div"onclick="func('d9')">_</div>
+    </div></div>
+    <br>
+    <div id="d12">  </div>
+    <script>
+         var user="user",al1="computer", s1="X",s2="O";
+        var date1=new Date;
+          var se1=date1.getSeconds();
+          var u=0,op=0,mem=[],selcted=[], yt=[],pop=0,mems=[];
+        function select(){
+            op=op+1;
+            if(mems[op-1]==0){
+                mems[op]=rand();
+                return rand()
+        }
+            else if(mems[op-1]=="X"){
+                mems[op]="O"
+                return "O"
+            }
+            else {
+                mems[op]="X"
+                return "X"
+            }
+        }
+            function rand(){
+            if(se1%2==0){
+                return s1;
+            }
+            else{
+                return s2;
+            } 
+        }
+        function rand3(){
+            if(se1%3!=0){
+                return user;
+            }
+            else{
+                return al1;
+            } 
+        }
+        function rand2(){
+            if(se1%2!=0){
+                return s1;
+            }
+            else{
+                return s2;
+            } 
+        }
+        function get(e){
+           return document.getElementById(e);
+        }  
+        function geti(t){
+            return document.getElementById(t).innerText;
+        }
+        var d12=get("d12");
+        d12.innerText=`Let '${user}' will be '${rand()}' and ${al1} will be'${rand2()}' then ${rand3()} will play first`;
+//         function timer(b){
+//     var de = new Date(1980, 10, 12, 10, 45, 1, 400);
+//     var w=de.getSeconds();
+//     if(b=="wait"){
+//       alert("game begins")
+//   //  console.log("plays")
+//    tim2=b;
+
+//     }
+//     else{
+//       // alert("helllooooooooo")
+//     if(tim2=="wait"){
+//          alert("fire fire fire")
+//     }
+//     else{
+//     function tim(){
+//     w = Number(w) - 1
+//     // console.log(w)
+//     if (w==0) {
+//   // console.log("hii")
+//     func("ok")
+//     document.getElementById(b).innerText=rand2()
+//     // console.log(b)
+//     prove(b)
+//     t = 0;
+//     clearInterval(int)}
+//       else {
+// }
+//     }
+//     const int=setInterval(tim,1000)
+//    }
+//   }
+//   }
+  function timer(b){
+      setTimeout(tim,1000)
+    function tim(){
+      func("ok")
+    document.getElementById(b).innerText=rand2()
+    prove(b)
+    }
+  }
+   function geta(g){
+            get(g).style.animationName="anime"
+        }
+        var dc = ["d1", "d2", "d3", "d4","d5", "d6", "d7", "d8","d9"];
+        if(rand3()=="computer"){
+          var po=ai2();
+          func("hi")
+          timer(po)
+          modify(po)
+        }
+        function func(j){
+          var f=document.getElementsByClassName("div");
+            var rt=0;
+            if(j=="hi"){
+            while(rt<f.length){
+                f.item(rt).removeAttribute("onclick")
+                rt++;
+            }
+        }
+        else if(j=="ok"){
+rt=0;
+while(rt<f.length){
+                f.item(rt).setAttribute("onclick",`func("d${rt+1}")`)
+                rt++;
+            }
+        }
+        else{
+            if(geti(j)!=='_'){ 
+        }
+        else{
+        var gd=get(j)
+      gd.innerText=rand()
+      selcted[u]=j;
+      u=u+1;
+    var wi=prove(j)
+      if(wi=="fire"){
+       hit(j)
+      }
+      else{
+      }
+      }
+      }
+        }
+        function hit(ty){
+          if(geti(ty)!=="_"){
+          modify(ty)
+          ai(ty)
+          }
+          else{
+          }
+        }
+        function modify(y){
+            var j=0;
+            while(j<dc.length){
+                if(dc[j]==y){
+                    dc.splice(j,1)
+                    break;
+                }
+                else{
+                }
+                j++;
+            }
+          }
+    //     function ai2(){
+    //       func("hi")
+    //       if(dc.length==0){
+    //       //   console.log("Stops it,Stops it,Stops it,Stops it");
+            
+    //       }
+    //       else{
+    //       var date = new Date();
+    // var se = date.getSeconds();
+    // se=se+10;
+    // var d;
+    // var i = 1;
+    // var v = 0;
+    // if (se / dc.length == 0) {
+    //   while (i <= se / dc.length) {
+    //     d=i;
+    //     i++;
+    //   }
+    // }
+    // else {
+
+    //   while (i <= se/ dc.length) {
+    //     while (v<dc.length) {
+         
+    //     //   console.log(dc[v])
+    //       v++;
+    //     }
+    //     // console.log("break " + i)
+    //     v = 0;
+    //     d=i;
+    //     i++;
+    //   }
+    // }
+    // var ab=d*dc.length;
+    // var td;
+    // if(se>ab){
+    // td=se-ab
+    // }
+    // else{
+    //   td=ab-se;
+    // }
+    // return dc[td]
+    //     }
+    //   }
+function ai2(){
+  func("hi")
+ var td= Math.floor(Math.random()*(dc.length-1))
+ return dc[td]
+} 
+        function ai(y){
+          console.log("welcome")
+          var b;
+          if(y!=="hyh"){
+          if(selcted.length<2){
+              b=ai2()
+             modify(b)
+          }
+          else{
+            
+            if(y=="d1"){//d1
+             id1()
+              function id1(){
+              if(geti(y)==geti("d2")){//d1 d2
+                if(geti("d3")=="_"){
+                 b= "d3"
+                }
+                else{
+                  id2()
+                }
+              }
+              else{
+                id2();
+              }
+              }
+              function id2(){
+              if(geti(y)==geti("d3")){//d1 d3
+                if(geti("d1")=="_"){
+                 b= "d1"
+                } 
+              else{
+               id3()
+            }
+              }
+              else{
+                id3();
+              }
+            }
+            function id3(){
+            if(geti(y)==geti("d5")){//d1 d5
+                if(geti("d9")=="_"){
+                  b= "d9" 
+                }
+                else{
+                id4();
+                }
+              }
+              else{
+              id4();
+              }
+            }
+            function id4(){
+             if(geti(y)==geti("d9")){//d1 d9
+                if(geti("d5")=="_"){
+                  b= "d5"    
+                }
+                else{
+               id5()
+                }
+            }
+            else{
+              id5();
+              }
+          }
+          function id5(){
+            if(geti(y)==geti("d4")){//d1 d4
+                if(geti("d7")=="_"){
+                     b= "d7"
+                }
+                else{
+                 id6()
+                }
+            }
+            else{
+                id6();
+              }
+          }
+          function id6(){
+            if(geti(y)==geti("d7")){//d1 d7
+                    if(geti("d4")=="_"){
+                     b="d4"
+                    }
+                    else{
+                    b= ai2()
+                    }
+                }
+                else{
+             b= ai2();
+              }
+              }
+              if(b==undefined){
+                b=ai2()
+              }
+              else{
+              }  
+            }
+            else if(y=="d2"){
+            i2d1()
+                function i2d1(){
+                if(geti(y)==geti("d1")){//d2 d1
+                  if(geti("d3")=="_"){
+                        b="d3";  
+                }
+                else{
+                i2d2()
+                }
+              }
+              else{
+                i2d2();
+              }
+              }
+              function i2d2(){
+              if(geti(y)==geti("d3")){//d2 d3
+                if(geti("d1")=="_"){
+                  b="d1"
+                    
+                }
+                else{
+                  i2d3()
+                }
+              }
+              else{
+                i2d3()
+              }
+            }
+            function i2d3(){
+              if(geti(y)==geti("d5")){//d2 d5
+                if(geti("d8")=="_"){
+                 b= "d8"
+                    
+                }
+                else{
+                  i2d4()
+                }
+              }
+              else{
+                i2d4();
+              }
+            }
+            function i2d4(){
+               if(geti(y)==geti("d8")){  //d2 d8
+                if(geti("d5")=="_"){
+                b= "d5"
+                    
+                }
+                else{
+               b= ai2()
+                }
+              }
+                 else{
+                b=  ai2()
+                 }
+            }
+            if(b==undefined){
+                b=ai2()
+              }
+              else{
+              } 
+            }
+            else if(y=="d3"){
+             i3d1()
+              function i3d1(){
+                if(geti(y)==geti("d2")){//d3 d2
+                  if(geti("d1")=="_"){
+                    b="d1"
+                }
+                else{
+                  i3d2();
+                }
+              }
+              else{
+                i3d2();
+              }
+            }
+            function i3d2(){
+            if(geti(y)==geti("d1")){//d3 d1
+                  if(geti("d2")=="_"){
+                    b= "d2"
+                    
+                }
+                else{
+                  i3d3();
+                }
+              }
+              else{
+                i3d3();
+              }
+            } 
+            function i3d3(){
+              if(geti(y)==geti("d6")){//d3 d6
+                  if(geti("d9")=="_"){
+                   b= "d9"
+                    
+                }
+                else{
+                  i3d4()
+                }
+              }
+              else{
+                   i3d4()
+              }
+            }
+            function i3d4(){
+              if(geti(y)==geti("d9")){//d3 d9
+                  if(geti("d6")=="_"){
+                    b= "d6"
+                    
+                }
+                else{
+                    i3d5()
+                }
+              }
+              else{
+                i3d5()
+              }
+            }
+            function i3d5(){
+              if(geti(y)==geti("d5")){//d3 d5
+                  if(geti("d3")=="_"){
+                    b= "d3"
+                    
+                }
+                else{
+                  i3d6()
+                }
+              }
+              else{
+                i3d6()
+              }
+            }
+            function i3d6(){
+              if(geti(y)==geti("d7")){//d3 d7
+                  if(geti("d5")=="_"){
+                    b= "d5"
+                    
+                }
+                else{
+               b=  ai2()
+                }
+              }
+              else{
+              b=  ai2()
+              }
+            }   
+            if(b==undefined){
+                b=ai2()
+              }
+              else{ 
+              }       
+            }
+            else if(y=="d4"){
+           i4d1()
+              function i4d1(){
+                if(geti(y)==geti("d1")){//d4 d1
+                  if(geti("d7")=="_"){
+                   b= "d7"
+                    
+                }
+                else{
+                  i4d2()
+                }
+              }
+              else{
+                i4d2();
+              }
+            }
+            function i4d2(){
+              if(geti(y)==geti("d7")){//d4 d7
+                  if(geti("d1")=="_"){
+                    b= "d1" 
+                }
+                else{
+                 i4d3();
+                }
+              }
+              else{
+                i4d3();
+              }      
+            }
+            function i4d3(){
+            if(geti(y)==geti("d5")){//d4 d5
+                  if(geti("d6")=="_"){
+                    b= "d6"    
+                }
+                else{
+                  i4d4()
+                }
+              }
+              else{
+                i4d4();
+              }
+            }
+            function i4d4(){
+              if(geti(y)==geti("d6")){//d4 d6
+                  if(geti("d5")=="_"){
+                    b= "d5"   
+                }
+                else{
+                 b= ai2()
+                }
+              }
+              else{
+               b= ai2();
+              }
+            }
+            if(b==undefined){
+                b=ai2()
+              }
+            else{
+            }   
+            }
+            else if(y=="d5"){
+             i5d1()
+              function i5d1(){
+              if(geti(y)==geti("d3")){//d5 d3
+                  if(geti("d7")=="_"){
+                    b= "d7"
+                }
+                else{
+                  i5d2()
+                }
+              }
+              else{
+                i5d2()
+              }
+            }
+            function i5d2(){
+              if(geti(y)==geti("d7")){//d5 d7
+                  if(geti("d3")=="_"){
+                    b= "d3"
+                    
+                }
+                else{
+                 i5d3()
+                }
+              }
+              else{
+                i5d3();
+              }
+            }
+            function i5d3(){
+              if(geti(y)==geti("d1")){//d5 d1
+                  if(geti("d9")=="_"){
+                    b="d9" 
+                }
+                else{
+                  i5d4()
+                }
+              }
+              else{
+                i5d4()
+              }
+            }
+            function i5d4(){
+              if(geti(y)==geti("d9")){//d5 d9
+                  if(geti("d1")=="_"){
+                    b= "d1"   
+                }
+                else{
+                i5d5()
+                }
+              }
+              else{
+                i5d5();
+              }
+            }
+            function i5d5(){
+              if(geti(y)==geti("d2")){//d5 d2
+                  if(geti("d8")=="_"){
+                    b="d8"
+                    
+                }
+                else{
+                  i5d6()
+                }
+              }
+              else{
+                i5d6();
+              }
+            }
+            function i5d6(){
+              if(geti(y)==geti("d8")){//d5 d8
+                  if(geti("d2")=="_"){
+                    b= "d2"  
+                }
+                else{
+                  i5d7()
+                }
+              }
+              else{
+                i5d7();
+              }
+            }
+            function i5d7(){
+              if(geti(y)==geti("d4")){//d5 d4
+                  if(geti("d6")=="_"){
+                    b= "d6"
+                    
+                }
+                else{
+                  i5d8()
+                }
+              }
+              else{
+                i5d8();
+              }
+            }
+            function i5d8(){
+              if(geti(y)==geti("d6")){//d5 d6
+                  if(geti("d4")=="_"){
+                   b= "d4" 
+                }
+                else{
+                b=  ai2();
+                }
+              }
+              else{
+               b=  ai2();
+              }
+            }
+            if(b==undefined){
+                b=ai2()
+              }
+              else{
+              } 
+            }
+            else if(y=="d6"){
+            i6d1()
+              function i6d1(){
+                if(geti(y)==geti("d3")){//d6 d3
+                  if(geti("d9")=="_"){
+                   b= "d9"
+                }
+                else{
+                  i6d2()
+                }
+              }
+              else{
+                i6d2();
+              }
+              }
+              function i6d2(){
+              if(geti(y)==geti("d9")){//d6 d9
+                  if(geti("d3")=="_"){
+                    b= "d3"  
+                }
+                else{
+                  i6d3()
+                }
+              }
+              else{
+                i6d3()
+              }
+            }
+            function i6d3(){
+              if(geti(y)==geti("d5")){//d6 d5
+                  if(geti("d4")=="_"){
+                    b= "d4"  
+                }
+                else{
+                 i6d4();
+                }
+              }
+              else{
+                i6d4();
+              }
+            }
+            function i6d4(){
+              if(geti(y)==geti("d4")){//d6 d4
+                  if(geti("d5")=="_"){
+                    b= "d5"
+                }
+                else{
+                b= ai2()
+                }
+              }
+              else{
+                b= ai2()
+              }
+            }
+            if(b==undefined){
+                b=ai2()
+              }
+              else{
+              } 
+             }
+           else if(y=="d7"){
+         i7d1()
+            function i7d1(){
+            if(geti(y)==geti("d4")){//d7 d4
+                  if(geti("d1")=="_"){
+                   b="d1";
+                }
+                else{
+                i7d2()
+                }
+              }
+              else{
+                i7d2()
+              }
+            }
+            function i7d2(){
+            if(geti(y)==geti("d1")){//d7 d1
+                  if(geti("d4")=="_"){
+                  b= "d4"
+                }
+                else{
+                  i7d3()
+                }
+              }
+              else{
+                i7d3()
+              }
+            }
+            function i7d3(){
+            if(geti(y)==geti("d5")){//d7 d5
+                  if(geti("d3")=="_"){
+                  b= "d3"
+                }
+                else{
+                  i7d4()
+                }
+              }
+              else{
+                i7d4();
+              }
+            }
+            function i7d4(){
+            if(geti(y)==geti("d3")){//d7 d3
+                  if(geti("d5")=="_"){
+                    b= "d5"
+                }
+                else{
+                  i7d5()
+                }
+              }
+              else{
+                i7d5()
+              }
+            }
+            function i7d5(){
+            if(geti(y)==geti("d8")){//d7 d8
+                  if(geti("d9")=="_"){
+                    b= "d9" 
+                }
+                else{
+                  i7d6()
+            }
+              }
+              else{
+                i7d6()
+              }
+            }
+            function i7d6(){
+            if(geti(y)==geti("d9")){//d7 d9
+                  if(geti("d8")=="_"){
+                   b= "d8"
+                }
+                else{
+                 b= ai2()
+                }
+              }
+              else{
+                b=  ai2();
+              }
+            }    
+            if(b==undefined){
+                b=ai2()
+              } 
+              else{
+              }               
+           }
+           else if(y=="d8"){
+            i8d1()
+            function i8d1(){
+            if(geti(y)==geti("d5")){//d8 d5
+                  if(geti("d2")=="_"){
+                    b= "d2"
+                }
+                else{
+                 i8d2()
+                }
+              }
+              else{
+                i8d2()
+              }
+            }
+          function i8d2(){
+             if(geti(y)==geti("d2")){//d8 d2
+                  if(geti("d5")=="_"){
+                    b= "d5" 
+                }
+                else{
+                 i8d3()
+                }
+              }
+              else{
+                i8d3()
+              }
+            }
+            function i8d3(){
+            if(geti(y)==geti("d7")){//d8 d7
+                  if(geti("d9")=="_"){
+                    b= "d9"   
+                }
+                else{
+                  i8d4()
+                }
+              }
+              else{
+                i8d4()
+              }
+            }
+            function i8d4(){
+            if(geti(y)==geti("d9")){//d8 d9
+                  if(geti("d7")=="_"){
+                   b= "d7"
+                }
+                else{
+                 b= ai2()
+                }
+              }
+              else{
+                b= ai2()
+              }
+            }
+            if(b==undefined){
+                b=ai2()
+              }
+              else{
+              }         
+           }
+           else if(y=="d9"){
+           i9d1()
+            function i9d1(){
+              if(geti(y)==geti("d8")){//d9 d8
+                if(geti("d7")=="_"){
+                  b= "d7"
+                }
+                else{
+                  i9d2()
+                }
+              }
+              else{
+                i9d2()
+              }
+            }
+            function i9d2(){
+             if(geti(y)==geti("d7")){//d9 d7
+              if(geti("d8")=="_"){
+               b="d8"
+                
+              }
+              else{
+         
+              i9d3()
+              }
+            }
+            else{
+              i9d3()
+            }
+          }
+          function i9d3(){
+            if(geti(y)==geti("d6")){//d9 d6
+              if(geti("d3")=="_"){
+                b="d3"
+              }
+              else{
+                i9d4()
+              }
+            }
+            else{
+              i9d4()
+            }
+          }
+          function i9d4(){
+            if(geti(y)==geti("d3")){//d9 d3
+              if(geti("d6")=="_"){
+                b= "d6"
+              }
+              else{
+                i9d5()
+              }
+            }
+            else{
+              i9d5()
+            }
+          }
+          function i9d5(){
+            if(geti(y)==geti("d5")){//d9 d5
+              if(geti("d1")=="_"){
+                b="d1"
+              }
+              else{
+                i9d6()
+              }
+            }
+            else{
+              i9d6()
+            }
+          }
+          function i9d6(){
+             if(geti(y)==geti("d1")){//d9 d1
+              if(geti("d5")=="_"){
+                b= "d5"
+              }
+              else{
+              b= ai2()
+              }
+            }
+            else{
+           b=  ai2()
+            }
+          }
+          if(b==undefined){
+                b=ai2()
+              } 
+           }
+           else{
+        
+           }
+          modify(b)
+          }
+          func("hi")
+         timer(b)
+        }
+        else{
+        }
+    }
+  //   function timer2(r){
+  //    r=String(r)
+  //     yt[pop]=r
+  //  pop=pop+1;
+  //     func("hi")
+  //     ai("hyh")
+  //     var date2 = new Date(1980, 10, 12, 10, 45, 1, 700);
+  //     var sec=date2.getSeconds();
+
+  //     if(pop<2){
+  //     function tim(){
+  //       sec=Number(sec)-1
+  //       if(sec==0){
+  //         timer("wait")
+  //         func("hi")
+  //         alert(yt[0]+" is the winner")
+  //         window.location.reload()
+  //         clearInterval(int)
+  //       }
+  //      else{
+
+  //      }
+
+  //     }
+  //     const int=setInterval(tim,1000)
+  //   }
+  //   else{
+      
+      
+  //   }
+  //   }
+function timer2(r){
+  setTimeout(tim,2000)
+function tim(){
+alert(r+" is the winner")
+window.location.reload()
+}
+}
+function cov(){
+            document.getElementById("cov").style.display="flex"
+        }
+   function prove(p){
+    var gt,vt;
+    if(geti(p)==rand()){
+            gt="User";
+            }
+            else {
+              gt="Computer";
+            }
+      if(p=="d1"){//t
+        if(get("d1").innerText==get("d2").innerText&&get("d1").innerText==get("d3").innerText){
+            geta("d1");
+            geta("d2")
+            geta("d3")
+           cov()
+            timer2(gt)
+        }
+     else if(geti("d1")==geti("d4")&&geti("d1")==geti("d7")){
+            geta("d1")
+           geta("d4")
+           geta("d7")
+           cov()
+           timer2(gt)
+            }
+      else if(geti("d1")==geti("d5")&&geti("d1")==geti("d9")){
+            geta("d1")
+            geta("d5")
+            geta("d9")
+           cov()
+            timer2(gt)
+        }
+        else{
+            vt=tie()
+        }              
+      }
+    else if(p=="d2"){//p
+        if(get("d1").innerText==get("d2").innerText&&get("d1").innerText==get("d3").innerText){
+            geta("d1");
+            geta("d2")
+            geta("d3")
+           cov()
+            timer2(gt)
+        }
+     else if(geti("d2")==geti("d5")&&geti("d2")==geti("d8")){
+            geta("d5");
+            geta("d2")
+            geta("d8")
+           cov()
+            timer2(gt)
+         }
+         else{
+            vt=tie()
+        }   
+      }
+    else if(p=="d3"){//u
+        if(get("d1").innerText==get("d2").innerText&&get("d1").innerText==get("d3").innerText){
+            geta("d1");
+            geta("d2")
+            geta("d3")
+           cov()
+            timer2(gt)
+        }
+      else if(geti("d3")==geti("d6")&&geti("d3")==geti("d9")){
+            geta("d9");
+            geta("d6")
+            geta("d3")
+           cov()
+            timer2(gt)
+        }
+       else if(geti("d3")==geti("d5")&&geti("d3")==geti("d7")){
+            geta("d7");
+            geta("d5")
+            geta("d3")
+           cov()
+            timer2(gt)
+        }
+        else{
+            vt=tie()
+        }   
+      }
+    else if(p=="d4"){//y
+        if(geti("d1")==geti("d4")&&geti("d1")==geti("d7")){
+            geta("d1");
+            geta("d4")
+            geta("d7")
+           cov()
+            timer2(gt)
+            }
+      else if(geti("d4")==geti("d5")&&geti("d4")==geti("d6")){
+            geta("d4");
+            geta("d5")
+            geta("d6")
+           cov()
+            timer2(gt)
+        }    
+        else{
+            vt=tie()
+        }   
+      }
+    else  if(p=="d5"){//q
+        if(geti("d4")==geti("d5")&&geti("d4")==geti("d6")){
+            geta("d4");
+            geta("d5")
+            geta("d6")
+           cov()
+            timer2(gt)
+        }
+    else if(geti("d2")==geti("d5")&&geti("d2")==geti("d8")){
+            geta("d5");
+            geta("d2")
+            geta("d8")
+           cov()
+            timer2(gt)
+         }
+        else if(geti("d1")==geti("d5")&&geti("d1")==geti("d9")){
+            geta("d1");
+            geta("d5")
+            geta("d9")
+           cov()
+            timer2(gt)
+        } 
+      else if(geti("d3")==geti("d5")&&geti("d3")==geti("d7")){
+            geta("d3");
+            geta("d5")
+            geta("d7")
+           cov()
+            timer2(gt)
+        }
+        else{
+            vt=tie()
+        }   
+      }
+   else  if(p=="d6"){//w
+      if(geti("d3")==geti("d6")&&geti("d3")==geti("d9")){
+            geta("d6");
+            geta("d3")
+            geta("d9")
+           cov()
+            timer2(gt)
+        }
+      else if(geti("d4")==geti("d5")&&geti("d4")==geti("d6")){
+            geta("d4");
+            geta("d5")
+            geta("d6")
+           cov()
+            timer2(gt)
+        }
+        else{
+            vt=tie()
+        }   
+      }
+    else  if(p=="d7"){//s
+        if(geti("d1")==geti("d4")&&geti("d1")==geti("d7")){
+            geta("d4");
+            geta("d1")
+            geta("d7")
+           cov()
+            timer2(gt)
+            }
+       else if(geti("d3")==geti("d5")&&geti("d3")==geti("d7")){
+                geta("d3");
+                geta("d5")
+                geta("d7")
+               cov()
+                timer2(gt)
+        }
+       else if(geti("d7")==geti("d8")&&geti("d7")==geti("d9")){
+            geta("d7");
+            geta("d8")
+            geta("d9")
+           cov()
+            timer2(gt)
+        } 
+        else{
+            vt=tie()
+        }      
+      }
+    else  if(p=="d8"){//a
+        if(geti("d7")==geti("d8")&&geti("d7")==geti("d9")){
+            geta("d7");
+            geta("d8")
+            geta("d9")
+           cov()
+            timer2(gt)
+        }
+      else if(geti("d2")==geti("d5")&&geti("d2")==geti("d8")){
+            geta("d2");
+            geta("d5")
+            geta("d8")
+           cov()
+            timer2(gt)
+        }
+        else{
+            vt=tie()
+        }   
+      }
+   else  if(p=="d9"){//c
+        if(geti("d7")==geti("d8")&&geti("d7")==geti("d9")){
+            geta("d7");
+            geta("d8")
+            geta("d9")
+           cov()
+            timer2(gt)
+        }
+      else if(geti("d3")==geti("d6")&&geti("d3")==geti("d9")){
+            geta("d6");
+            geta("d3")
+            geta("d9")
+           cov()
+            timer2(gt)
+        }
+       else if(geti("d1")==geti("d5")&&geti("d1")==geti("d9")){
+            geta("d5");
+            geta("d1")
+            geta("d9")
+           cov()
+            timer2(gt)
+        }
+        else {
+        
+            vt=tie()
+        } 
+      }
+      return vt 
+       }
+    //    function delay(dy){
+    //     var date2 = new Date(1980, 10, 12, 10, 45, 1, 700);
+    //   var sec=date2.getSeconds();
+    //   function tim(){
+    //     sec=Number(sec)-1
+    //     if(sec==0){
+    //       alert(dy)
+    //       window.location.reload()
+    //       clearInterval(int)
+    //     }
+    //    else{
+    //    }
+    //   }
+    //   const int=setInterval(tim,1000)
+    // }
+function tie(){
+   if(geti("d1")!=='_'&&geti("d2")!=='_'&&geti("d3")!=='_'&&geti("d4")!=='_'&&geti("d5")!=='_'&&geti("d6")!=='_'&&geti("d7")!=='_'&&geti("d8")!=='_'&&geti("d9")!=='_'){
+        setTimeout(delay,2000)
+        function delay(){
+           alert("tie")
+           window.location.reload()
+        }
+    }
+    else{
+      return "fire"
+    }
+  }
+ 
+    </script>
+</body>
+</html>
